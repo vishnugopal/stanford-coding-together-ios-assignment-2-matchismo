@@ -11,7 +11,17 @@
 
 @interface CardMatchingGame : NSObject
 
+//designated initializer
 - (id)initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck*)deck;
+
+//convenience initializer
+- (id)initWithCardCount:(NSUInteger)cardCount
+              usingDeck:(Deck*)deck
+           withFlipCost:(NSUInteger)flipCost
+             matchBonus:(NSUInteger)matchBonus
+        mismatchPenalty:(NSUInteger)mismatchPenalty;
+
+
 - (void)flipCardAtIndex:(NSUInteger)index;
 - (Card*)cardAtIndex:(NSUInteger)index;
 

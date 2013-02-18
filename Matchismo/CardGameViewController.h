@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+/* Public Interface */
 @interface CardGameViewController : UIViewController
-
 @end
+

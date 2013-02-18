@@ -40,6 +40,7 @@
 		F5265E8C16D27FF500196504 /* TwoCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoCardGameViewController.m; sourceTree = "<group>"; };
 		F5265E8E16D2804D00196504 /* SetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
 		F5265E8F16D2804D00196504 /* SetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
+		F5265E9116D293FE00196504 /* CardGameViewControllerPrivateProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardGameViewControllerPrivateProperties.h; sourceTree = "<group>"; };
 		F52FB0C016CFD12900080D45 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52FB0C316CFD12900080D45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F52FB0C516CFD12900080D45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,6 +119,7 @@
 				F52FB0DB16CFD12900080D45 /* MainStoryboard.storyboard */,
 				F52FB0E916CFD6AD00080D45 /* Model */,
 				F52FB0DE16CFD12900080D45 /* CardGameViewController.h */,
+				F5265E9116D293FE00196504 /* CardGameViewControllerPrivateProperties.h */,
 				F52FB0DF16CFD12900080D45 /* CardGameViewController.m */,
 				F5265E8B16D27FF500196504 /* TwoCardGameViewController.h */,
 				F5265E8C16D27FF500196504 /* TwoCardGameViewController.m */,

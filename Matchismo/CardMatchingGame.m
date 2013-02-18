@@ -19,22 +19,11 @@
 
 @implementation CardMatchingGame
 
-- (NSMutableArray *)cards {
-    if(!_cards) _cards = [[NSMutableArray alloc] init];
-    return _cards;
-}
-
-- (NSMutableArray *)cardsInMatchQueue {
-    if(!_cardsInMatchQueue) _cardsInMatchQueue = [[NSMutableArray alloc] init];
-    
-    return _cardsInMatchQueue;
-}
-
-- (id)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck {
+- (id)initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck {
     self = [super init];
     
     if (self) {
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < cardCount; i++) {
             Card *card = [deck drawRandomCard];
             if (!card) {
                 self = nil;
@@ -49,6 +38,36 @@
     
     return self;
 }
+
+- (id)initWithCardCount:(NSUInteger)cardCount
+              usingDeck:(Deck*)deck
+           withFlipCost:(NSUInteger)flipCost
+             matchBonus:(NSUInteger)matchBonus
+        mismatchPenalty:(NSUInteger)mismatchPenalty {
+    self = [self initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck];
+    
+    if (self) {
+        self.flipCost = flipCost;
+        self.matchBonus = matchBonus;
+        self.mismatchPenalty = mismatchPenalty;
+    }
+    
+    return self;
+}
+
+
+
+- (NSMutableArray *)cards {
+    if(!_cards) _cards = [[NSMutableArray alloc] init];
+    return _cards;
+}
+
+- (NSMutableArray *)cardsInMatchQueue {
+    if(!_cardsInMatchQueue) _cardsInMatchQueue = [[NSMutableArray alloc] init];
+    
+    return _cardsInMatchQueue;
+}
+
 
 - (Card *)cardAtIndex:(NSUInteger)index {
     return (index < self.cards.count) ? self.cards[index] : nil;
