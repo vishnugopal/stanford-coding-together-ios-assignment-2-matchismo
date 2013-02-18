@@ -18,7 +18,6 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentaryLabel;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSelector;
 @property (strong, nonatomic) UIImage* cardBackImage;
 @end
 
@@ -88,12 +87,7 @@
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
 }
 
-- (IBAction)flipCard:(UIButton *)sender {
-    if (self.gameModeSelector.isEnabled) {
-        self.game.numberOfCardsToMatch = [self numberOfCardsToMatchFromGameModeSelection:self.gameModeSelector.selectedSegmentIndex];
-        self.gameModeSelector.enabled = NO;
-    }
-    
+- (IBAction)flipCard:(UIButton *)sender {    
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
@@ -101,13 +95,8 @@
 
 - (IBAction)dealGame {
     self.game = nil;
-    self.gameModeSelector.enabled = YES;
     self.flipCount = 0;
     [self updateUI];
-}
-
-- (int)numberOfCardsToMatchFromGameModeSelection:(NSUInteger)index {
-    return index + 2;
 }
 
 @end
