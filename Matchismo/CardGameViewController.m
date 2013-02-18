@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentaryLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSelector;
+@property (strong, nonatomic) UIImage* cardBackImage;
 @end
 
 @implementation CardGameViewController
@@ -29,6 +30,12 @@
                                                          usingDeck:[[PlayingCardDeck alloc] init]];
     
     return _game;
+}
+
+- (UIImage *)cardBackImage {
+    if (!_cardBackImage) _cardBackImage = [UIImage imageNamed:@"cardback.png"];
+    
+    return _cardBackImage;
 }
 
 
@@ -62,7 +69,6 @@
 }
 
 - (void)updateUI {
-    UIImage *cardBackImage = [UIImage imageNamed:@"cardback.png"];
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
@@ -71,7 +77,7 @@
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3: 1.0;
-        [cardButton setBackgroundImage:cardBackImage forState:UIControlStateNormal];
+        [cardButton setBackgroundImage:self.cardBackImage forState:UIControlStateNormal];
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     [self updateCommentary];

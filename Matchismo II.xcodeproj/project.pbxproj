@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F5265E8716D26A5400196504 /* SuitCard.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265E8616D26A5400196504 /* SuitCard.m */; };
+		F5265E8A16D277EF00196504 /* SuitCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265E8916D277EF00196504 /* SuitCardDeck.m */; };
 		F52FB0C416CFD12900080D45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52FB0C316CFD12900080D45 /* UIKit.framework */; };
 		F52FB0C616CFD12900080D45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52FB0C516CFD12900080D45 /* Foundation.framework */; };
 		F52FB0C816CFD12900080D45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52FB0C716CFD12900080D45 /* CoreGraphics.framework */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		F5265E8516D26A5400196504 /* SuitCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuitCard.h; path = Model/SuitCard.h; sourceTree = "<group>"; };
 		F5265E8616D26A5400196504 /* SuitCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuitCard.m; path = Model/SuitCard.m; sourceTree = "<group>"; };
+		F5265E8816D277EF00196504 /* SuitCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuitCardDeck.h; path = Model/SuitCardDeck.h; sourceTree = "<group>"; };
+		F5265E8916D277EF00196504 /* SuitCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuitCardDeck.m; path = Model/SuitCardDeck.m; sourceTree = "<group>"; };
 		F52FB0C016CFD12900080D45 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52FB0C316CFD12900080D45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F52FB0C516CFD12900080D45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,6 +150,8 @@
 				F52FB0EB16CFD6C700080D45 /* Deck.m */,
 				F5265E8516D26A5400196504 /* SuitCard.h */,
 				F5265E8616D26A5400196504 /* SuitCard.m */,
+				F5265E8816D277EF00196504 /* SuitCardDeck.h */,
+				F5265E8916D277EF00196504 /* SuitCardDeck.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				F52FB0F216CFDC0E00080D45 /* PlayingCardDeck.m in Sources */,
 				F59C297116D01CE800953ABC /* CardMatchingGame.m in Sources */,
 				F5265E8716D26A5400196504 /* SuitCard.m in Sources */,
+				F5265E8A16D277EF00196504 /* SuitCardDeck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

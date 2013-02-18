@@ -7,6 +7,7 @@
 //
 
 #import "PlayingCardDeck.h"
+#import "PlayingCard.h"
 
 @implementation PlayingCardDeck
 

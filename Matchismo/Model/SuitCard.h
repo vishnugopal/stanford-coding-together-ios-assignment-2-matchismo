@@ -19,5 +19,6 @@
 + (NSUInteger)maxNumbers;
 + (NSArray *)validSymbols;
 + (NSArray *)validShadings;
++ (NSArray *)validColors;
 
 @end
