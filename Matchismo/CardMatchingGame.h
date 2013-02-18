@@ -19,7 +19,8 @@
               usingDeck:(Deck*)deck
            withFlipCost:(NSUInteger)flipCost
              matchBonus:(NSUInteger)matchBonus
-        mismatchPenalty:(NSUInteger)mismatchPenalty;
+        mismatchPenalty:(NSUInteger)mismatchPenalty
+    numberOfCardsToMatch:(NSUInteger)numberOfCardsToMatch;
 
 
 - (void)flipCardAtIndex:(NSUInteger)index;

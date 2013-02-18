@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F5265E8716D26A5400196504 /* SuitCard.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265E8616D26A5400196504 /* SuitCard.m */; };
-		F5265E8A16D277EF00196504 /* SuitCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265E8916D277EF00196504 /* SuitCardDeck.m */; };
+		F5265E8716D26A5400196504 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265E8616D26A5400196504 /* SetCard.m */; };
+		F5265E8A16D277EF00196504 /* SetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265E8916D277EF00196504 /* SetCardDeck.m */; };
 		F5265E8D16D27FF500196504 /* TwoCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265E8C16D27FF500196504 /* TwoCardGameViewController.m */; };
 		F5265E9016D2804D00196504 /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265E8F16D2804D00196504 /* SetGameViewController.m */; };
 		F52FB0C416CFD12900080D45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52FB0C316CFD12900080D45 /* UIKit.framework */; };
@@ -32,10 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F5265E8516D26A5400196504 /* SuitCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuitCard.h; path = Model/SuitCard.h; sourceTree = "<group>"; };
-		F5265E8616D26A5400196504 /* SuitCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuitCard.m; path = Model/SuitCard.m; sourceTree = "<group>"; };
-		F5265E8816D277EF00196504 /* SuitCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuitCardDeck.h; path = Model/SuitCardDeck.h; sourceTree = "<group>"; };
-		F5265E8916D277EF00196504 /* SuitCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuitCardDeck.m; path = Model/SuitCardDeck.m; sourceTree = "<group>"; };
+		F5265E8516D26A5400196504 /* SetCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCard.h; path = Model/SetCard.h; sourceTree = "<group>"; };
+		F5265E8616D26A5400196504 /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCard.m; path = Model/SetCard.m; sourceTree = "<group>"; };
+		F5265E8816D277EF00196504 /* SetCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCardDeck.h; path = Model/SetCardDeck.h; sourceTree = "<group>"; };
+		F5265E8916D277EF00196504 /* SetCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCardDeck.m; path = Model/SetCardDeck.m; sourceTree = "<group>"; };
 		F5265E8B16D27FF500196504 /* TwoCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoCardGameViewController.h; sourceTree = "<group>"; };
 		F5265E8C16D27FF500196504 /* TwoCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoCardGameViewController.m; sourceTree = "<group>"; };
 		F5265E8E16D2804D00196504 /* SetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
@@ -160,10 +160,10 @@
 				F52FB0F116CFDC0E00080D45 /* PlayingCardDeck.m */,
 				F52FB0EA16CFD6C700080D45 /* Deck.h */,
 				F52FB0EB16CFD6C700080D45 /* Deck.m */,
-				F5265E8516D26A5400196504 /* SuitCard.h */,
-				F5265E8616D26A5400196504 /* SuitCard.m */,
-				F5265E8816D277EF00196504 /* SuitCardDeck.h */,
-				F5265E8916D277EF00196504 /* SuitCardDeck.m */,
+				F5265E8516D26A5400196504 /* SetCard.h */,
+				F5265E8616D26A5400196504 /* SetCard.m */,
+				F5265E8816D277EF00196504 /* SetCardDeck.h */,
+				F5265E8916D277EF00196504 /* SetCardDeck.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -245,8 +245,8 @@
 				F52FB0EF16CFD92E00080D45 /* PlayingCard.m in Sources */,
 				F52FB0F216CFDC0E00080D45 /* PlayingCardDeck.m in Sources */,
 				F59C297116D01CE800953ABC /* CardMatchingGame.m in Sources */,
-				F5265E8716D26A5400196504 /* SuitCard.m in Sources */,
-				F5265E8A16D277EF00196504 /* SuitCardDeck.m in Sources */,
+				F5265E8716D26A5400196504 /* SetCard.m in Sources */,
+				F5265E8A16D277EF00196504 /* SetCardDeck.m in Sources */,
 				F5265E8D16D27FF500196504 /* TwoCardGameViewController.m in Sources */,
 				F5265E9016D2804D00196504 /* SetGameViewController.m in Sources */,
 			);

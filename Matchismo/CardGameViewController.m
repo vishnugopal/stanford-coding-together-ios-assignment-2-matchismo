@@ -17,7 +17,8 @@
                                                          usingDeck:self.deck
                                                       withFlipCost:self.flipCost
                                                         matchBonus:self.matchBonus
-                                                   mismatchPenalty:self.mismatchPenalty];
+                                                   mismatchPenalty:self.mismatchPenalty
+                                              numberOfCardsToMatch:self.numberOfCardsToMatch];
     
     return _game;
 }

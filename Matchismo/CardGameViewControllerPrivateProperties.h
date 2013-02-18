@@ -20,5 +20,6 @@
 @property (nonatomic) NSUInteger flipCost;
 @property (nonatomic) NSUInteger matchBonus;
 @property (nonatomic) NSUInteger mismatchPenalty;
+@property (nonatomic) NSUInteger numberOfCardsToMatch;
 @property (nonatomic, strong) Deck* deck;
 @end

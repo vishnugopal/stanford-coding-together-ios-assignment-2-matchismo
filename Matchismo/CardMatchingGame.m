@@ -43,13 +43,15 @@
               usingDeck:(Deck*)deck
            withFlipCost:(NSUInteger)flipCost
              matchBonus:(NSUInteger)matchBonus
-        mismatchPenalty:(NSUInteger)mismatchPenalty {
+        mismatchPenalty:(NSUInteger)mismatchPenalty
+   numberOfCardsToMatch:(NSUInteger)numberOfCardsToMatch {
     self = [self initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck];
     
     if (self) {
         self.flipCost = flipCost;
         self.matchBonus = matchBonus;
         self.mismatchPenalty = mismatchPenalty;
+        self.numberOfCardsToMatch = numberOfCardsToMatch;
     }
     
     return self;

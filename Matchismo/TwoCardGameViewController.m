@@ -16,7 +16,6 @@
 @implementation TwoCardGameViewController
 @synthesize deck = _deck;
 
-
 - (NSUInteger)flipCost {
     return 1;
 }
@@ -26,6 +25,10 @@
 }
 
 - (NSUInteger)mismatchPenalty {
+    return 2;
+}
+
+- (NSUInteger)numberOfCardsToMatch {
     return 2;
 }
 

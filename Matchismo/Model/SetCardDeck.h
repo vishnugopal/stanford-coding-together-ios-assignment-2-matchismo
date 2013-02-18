@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Deck.h"
 
-@interface SuitCardDeck : Deck
+@interface SetCardDeck : Deck
 
 @end
