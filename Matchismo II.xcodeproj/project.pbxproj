@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5265E8716D26A5400196504 /* SuitCard.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265E8616D26A5400196504 /* SuitCard.m */; };
 		F52FB0C416CFD12900080D45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52FB0C316CFD12900080D45 /* UIKit.framework */; };
 		F52FB0C616CFD12900080D45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52FB0C516CFD12900080D45 /* Foundation.framework */; };
 		F52FB0C816CFD12900080D45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52FB0C716CFD12900080D45 /* CoreGraphics.framework */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5265E8516D26A5400196504 /* SuitCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuitCard.h; path = Model/SuitCard.h; sourceTree = "<group>"; };
+		F5265E8616D26A5400196504 /* SuitCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuitCard.m; path = Model/SuitCard.m; sourceTree = "<group>"; };
 		F52FB0C016CFD12900080D45 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52FB0C316CFD12900080D45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F52FB0C516CFD12900080D45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,13 +138,15 @@
 				F59C296F16D01CE800953ABC /* CardMatchingGame.h */,
 				F59C297016D01CE800953ABC /* CardMatchingGame.m */,
 				F52FB0E616CFD6A600080D45 /* Card.h */,
+				F52FB0E716CFD6A600080D45 /* Card.m */,
 				F52FB0ED16CFD92E00080D45 /* PlayingCard.h */,
 				F52FB0EE16CFD92E00080D45 /* PlayingCard.m */,
 				F52FB0F016CFDC0E00080D45 /* PlayingCardDeck.h */,
 				F52FB0F116CFDC0E00080D45 /* PlayingCardDeck.m */,
-				F52FB0E716CFD6A600080D45 /* Card.m */,
 				F52FB0EA16CFD6C700080D45 /* Deck.h */,
 				F52FB0EB16CFD6C700080D45 /* Deck.m */,
+				F5265E8516D26A5400196504 /* SuitCard.h */,
+				F5265E8616D26A5400196504 /* SuitCard.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -176,7 +181,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Twicecraft;
 			};
-			buildConfigurationList = F52FB0BB16CFD12900080D45 /* Build configuration list for PBXProject "Matchismo" */;
+			buildConfigurationList = F52FB0BB16CFD12900080D45 /* Build configuration list for PBXProject "Matchismo II" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -223,6 +228,7 @@
 				F52FB0EF16CFD92E00080D45 /* PlayingCard.m in Sources */,
 				F52FB0F216CFDC0E00080D45 /* PlayingCardDeck.m in Sources */,
 				F59C297116D01CE800953ABC /* CardMatchingGame.m in Sources */,
+				F5265E8716D26A5400196504 /* SuitCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +317,7 @@
 				GCC_PREFIX_HEADER = "Matchismo/Matchismo-Prefix.pch";
 				INFOPLIST_FILE = "Matchismo/Matchismo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -322,6 +329,7 @@
 				GCC_PREFIX_HEADER = "Matchismo/Matchismo-Prefix.pch";
 				INFOPLIST_FILE = "Matchismo/Matchismo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -329,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F52FB0BB16CFD12900080D45 /* Build configuration list for PBXProject "Matchismo" */ = {
+		F52FB0BB16CFD12900080D45 /* Build configuration list for PBXProject "Matchismo II" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F52FB0E116CFD12900080D45 /* Debug */,

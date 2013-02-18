@@ -14,20 +14,30 @@
     int score = 0;
     
     if ([otherCards count] == 1) {
-        PlayingCard *otherCard = [otherCards lastObject];
-        if ([otherCard.suit isEqualToString:self.suit]) {
-            score = 1;
-        } else if (otherCard.rank == self.rank) {
-            score = 4;
+        id otherCard = [otherCards lastObject];
+        if ([otherCard isKindOfClass:[PlayingCard class]]) {
+            PlayingCard *otherPlayingCard = (PlayingCard *)otherCard;
+            
+            if ([otherPlayingCard.suit isEqualToString:self.suit]) {
+                score = 1;
+            } else if (otherPlayingCard.rank == self.rank) {
+                score = 4;
+            }
         }
     } else if ([otherCards count] == 2) {
-        PlayingCard *firstCard = [otherCards objectAtIndex:0];
-        PlayingCard *secondCard = [otherCards objectAtIndex:1];
+        id firstCard = [otherCards objectAtIndex:0];
+        id secondCard = [otherCards objectAtIndex:1];
         
-        if ([firstCard.suit isEqualToString:self.suit] && [secondCard.suit isEqualToString:self.suit]) {
-            score = 4;
-        } else if ((firstCard.rank == self.rank) && (secondCard.rank == self.rank)) {
-            score = 16;
+        if ([firstCard isKindOfClass:[PlayingCard class]] &&
+                [secondCard isKindOfClass:[PlayingCard class]]) {
+            PlayingCard *firstPlayingCard = (PlayingCard *)firstCard;
+            PlayingCard *secondPlayingCard = (PlayingCard *)secondCard;
+            
+            if ([firstPlayingCard.suit isEqualToString:self.suit] && [secondPlayingCard.suit isEqualToString:self.suit]) {
+                score = 4;
+            } else if ((firstPlayingCard.rank == self.rank) && (secondPlayingCard.rank == self.rank)) {
+                score = 16;
+            }
         }
     }
     
@@ -54,10 +64,6 @@
 
 - (NSString *)suit {
     return _suit ? _suit : @"?";
-}
-
-- (NSString *)description {
-    return self.contents;
 }
 
 + (NSArray*) rankStrings {
