@@ -70,11 +70,23 @@
     if (self.game.lastFlippedCard) [possibleCards addObject:self.game.lastFlippedCard];
     
     if (possibleCards) {
+        NSRange lastRange;
+        lastRange.location = 0;
+        lastRange.length = 0;
         for (Card *card in possibleCards) {
             if ([card isKindOfClass:[SetCard class]]) {
                 SetCard* setCard = (SetCard*)card;
                 
-                NSRange range = [[commentary string] rangeOfString:setCard.contents];
+                NSRange range;
+                if (lastRange.length == 0) {
+                    range = [[commentary string] rangeOfString:setCard.contents];
+                } else {
+                    range = [[commentary string] rangeOfString:setCard.contents options:NSLiteralSearch range:lastRange];
+                }
+
+                lastRange.location = range.location + range.length;
+                lastRange.length = [commentary length] - lastRange.location;
+                
                 [commentary setAttributes:[self attributesForCard:setCard] range:range];
             }
         }
