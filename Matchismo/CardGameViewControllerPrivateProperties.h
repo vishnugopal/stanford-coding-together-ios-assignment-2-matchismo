@@ -22,4 +22,5 @@
 @property (nonatomic) NSUInteger mismatchPenalty;
 @property (nonatomic) NSUInteger numberOfCardsToMatch;
 @property (nonatomic, strong) Deck* deck;
+@property (strong, nonatomic) NSString* currentCommentary;
 @end

@@ -10,7 +10,6 @@
 #import "CardGameViewControllerPrivateProperties.h"
 #import "PlayingCardDeck.h"
 
-
 @implementation CardGameViewController
 - (CardMatchingGame *)game {
     if(!_game) _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
@@ -39,7 +38,7 @@
     /* Abstract method */
 }
 
-- (void)updateCommentary {
+- (NSString *)getCommentaryForCurrentGame {
     NSString *commentary = @"";
     int lastScore = [self.game lastScore];
     NSString *matchedCardsAsString = [[self.game lastMatchedCards] componentsJoinedByString:@" & "];
@@ -59,13 +58,16 @@
         }
     }
     
-    
-    self.commentaryLabel.text = commentary;
+    return commentary;
+}
+
+- (void)updateCommentary {
+    self.currentCommentary = [self getCommentaryForCurrentGame];
 }
 
 - (void)updateUI {
-    [self updateButtonsAndLabels];
     [self updateCommentary];
+    [self updateButtonsAndLabels];
 }
 
 -(void)setFlipCount:(int)flipCount {

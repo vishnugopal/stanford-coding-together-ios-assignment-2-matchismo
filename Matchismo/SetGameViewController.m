@@ -44,9 +44,11 @@
 - (void)updateButtonsAndLabels {
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
-        
+                
+        cardButton.alpha = [self shadingForCard:card];
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
+        cardButton.backgroundColor = [UIColor blackColor];
         
         /* Content is visible in all states */
         NSAttributedString *cardContents = [self attributedStringContentsForCard:card];
@@ -54,8 +56,52 @@
         [cardButton setAttributedTitle:cardContents forState:UIControlStateSelected];
         [cardButton setAttributedTitle:cardContents forState:UIControlStateSelected|UIControlStateDisabled];
         
+        [cardButton setBackgroundImage:self.cardBackImage forState:UIControlStateSelected];
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    [self updateCommentaryLabel];
+}
+
+- (void)updateCommentaryLabel {
+    NSMutableAttributedString *commentary = [[NSMutableAttributedString alloc] initWithString:self.currentCommentary attributes:@{}];
+    
+    NSMutableArray *possibleCards = [self.game.lastMatchedCards mutableCopy];
+    if (!possibleCards) possibleCards = [[NSMutableArray alloc] init];
+    if (self.game.lastFlippedCard) [possibleCards addObject:self.game.lastFlippedCard];
+    
+    if (possibleCards) {
+        for (Card *card in possibleCards) {
+            if ([card isKindOfClass:[SetCard class]]) {
+                SetCard* setCard = (SetCard*)card;
+                
+                NSRange range = [[commentary string] rangeOfString:setCard.contents];
+                [commentary setAttributes:[self attributesForCard:setCard] range:range];
+            }
+        }
+    }
+    
+    self.commentaryLabel.attributedText = commentary;
+}
+
+- (CGFloat)shadingForCard:(Card *)card {
+    CGFloat alpha = 1;
+    
+    if ([card isKindOfClass:[SetCard class]]) {
+        SetCard* setCard = (SetCard*)card;
+        
+        /* Set shading */
+        if (setCard.isUnplayable) {
+            alpha = 0; /*Invisible*/
+        } else if ([setCard.shading isEqualToNumber:SetCardShadingSolid]) {
+            alpha = 1;
+        } else if ([setCard.shading isEqualToNumber:SetCardShadingStriped]) {
+            alpha = 0.7;
+        } else if ([setCard.shading isEqualToNumber:SetCardShadingOpen]) {
+            alpha = 0.3;
+        }
+    }
+    
+    return alpha;
 }
 
 - (NSAttributedString *)attributedStringContentsForCard:(Card *)card {
@@ -64,35 +110,7 @@
     if ([card isKindOfClass:[SetCard class]]) {
         SetCard* setCard = (SetCard*)card;
         
-        /* Set shading */
-        int alpha = 1;
-        if (setCard.isUnplayable) {
-            alpha = 0; /*Invisible*/
-        } else if ([setCard.shading isEqualToNumber:SetCardShadingSolid]) {
-            alpha = 1;
-        } else if ([setCard.shading isEqualToNumber:SetCardShadingStriped]) {
-            alpha = 0.7;
-        } else if ([setCard.shading isEqualToNumber:SetCardShadingStriped]) {
-            alpha = 0.3;
-        }
-        
-        /* Set color */
-        UIColor* color = nil;
-        if ([setCard.color isEqualToNumber:SetCardColorRed]) {
-            color = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:alpha];
-        } else if ([setCard.color isEqualToNumber:SetCardColorGreen]) {
-            color = [UIColor colorWithRed:0 green:1.0 blue:0 alpha:alpha];
-        } else if ([setCard.color isEqualToNumber:SetCardColorPurple]) {
-            color = [UIColor colorWithRed:0.6 green:0 blue:0.6 alpha:alpha];
-        }
-        
-        /* Set font */
-        UIFont *font = [UIFont systemFontOfSize:8];
-        
-        /* Now set attributes */
-        NSDictionary *attributes = @{NSFontAttributeName: font,
-                                     NSForegroundColorAttributeName: color,
-                                     };
+        NSDictionary *attributes = [self attributesForCard:setCard];
         
         /* Create the attributed string finally */
         attributedString = [[NSAttributedString alloc] initWithString:card.contents attributes:attributes];
@@ -100,5 +118,28 @@
     
     return attributedString;
 }
+
+- (NSDictionary *)attributesForCard:(SetCard*)setCard {
+    /* Set color */
+    UIColor* color = nil;
+    if ([setCard.color isEqualToNumber:SetCardColorRed]) {
+        color = [UIColor redColor];
+    } else if ([setCard.color isEqualToNumber:SetCardColorGreen]) {
+        color = [UIColor greenColor];
+    } else if ([setCard.color isEqualToNumber:SetCardColorPurple]) {
+        color = [UIColor purpleColor];
+    }
+    
+    /* Set font */
+    UIFont *font = [UIFont systemFontOfSize:8];
+    
+    /* Now set attributes */
+    NSDictionary *attributes = @{NSFontAttributeName: font,
+                                 NSForegroundColorAttributeName: color,
+                                 };
+    
+    return attributes;
+}
+
 
 @end

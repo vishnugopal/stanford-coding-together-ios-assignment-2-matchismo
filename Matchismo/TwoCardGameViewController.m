@@ -50,6 +50,7 @@
         [cardButton setBackgroundImage:self.cardBackImage forState:UIControlStateNormal];
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.commentaryLabel.text = self.currentCommentary;
 }
 
 @end

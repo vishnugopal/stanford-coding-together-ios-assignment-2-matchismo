@@ -34,7 +34,7 @@
         }
     }
     
-    self.numberOfCardsToMatch = 2;
+    _numberOfCardsToMatch = 2;
     
     return self;
 }
@@ -48,10 +48,10 @@
     self = [self initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck];
     
     if (self) {
-        self.flipCost = flipCost;
-        self.matchBonus = matchBonus;
-        self.mismatchPenalty = mismatchPenalty;
-        self.numberOfCardsToMatch = numberOfCardsToMatch;
+        _flipCost = flipCost;
+        _matchBonus = matchBonus;
+        _mismatchPenalty = mismatchPenalty;
+        _numberOfCardsToMatch = numberOfCardsToMatch;
     }
     
     return self;
@@ -73,24 +73,6 @@
 
 - (Card *)cardAtIndex:(NSUInteger)index {
     return (index < self.cards.count) ? self.cards[index] : nil;
-}
-
-- (NSUInteger)flipCost {
-    if (!_flipCost) _flipCost = 1;
-    
-    return _flipCost;
-}
-
-- (NSUInteger)matchBonus {
-    if (!_matchBonus) _matchBonus = 4;
-    
-    return _matchBonus;
-}
-
-- (NSUInteger)mismatchPenalty {
-    if (!_mismatchPenalty) _mismatchPenalty = 4;
-    
-    return _mismatchPenalty;
 }
 
 - (void)flipCardAtIndex:(NSUInteger)index {
