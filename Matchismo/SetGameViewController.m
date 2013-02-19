@@ -63,36 +63,50 @@
 }
 
 - (void)updateCommentaryLabel {
-    NSMutableAttributedString *commentary = [[NSMutableAttributedString alloc] initWithString:self.currentCommentary attributes:@{}];
-    
     NSMutableArray *possibleCards = [self.game.lastMatchedCards mutableCopy];
     if (!possibleCards) possibleCards = [[NSMutableArray alloc] init];
     if (self.game.lastFlippedCard) [possibleCards addObject:self.game.lastFlippedCard];
     
-    if (possibleCards) {
-        NSRange lastRange;
-        lastRange.location = 0;
-        lastRange.length = 0;
-        for (Card *card in possibleCards) {
+    self.commentaryLabel.attributedText = [self createAttributedStringsFor:possibleCards withString:self.currentCommentary];
+}
+
+-(NSAttributedString *)createAttributedStringsFor:(NSArray *)cards withString:(NSString *)originalString {
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.currentCommentary attributes:@{}];
+    
+    if (cards) {
+        NSRange nextRange;
+        nextRange.location = 0;
+        nextRange.length = 0;
+        for (Card *card in cards) {
             if ([card isKindOfClass:[SetCard class]]) {
                 SetCard* setCard = (SetCard*)card;
                 
                 NSRange range;
-                if (lastRange.length == 0) {
-                    range = [[commentary string] rangeOfString:setCard.contents];
+                if (nextRange.length == 0) {
+                    /*
+                     For the first card we find the first match.
+                     */
+                    range = [[attributedString string] rangeOfString:setCard.contents];
                 } else {
-                    range = [[commentary string] rangeOfString:setCard.contents options:NSLiteralSearch range:lastRange];
+                    /*
+                     For the rest, we start searching only from the last range. This is to make sure we have correct attributes for duplicate symbols.
+                     */
+                    range = [[attributedString string] rangeOfString:setCard.contents options:NSLiteralSearch range:nextRange];
                 }
-
-                lastRange.location = range.location + range.length;
-                lastRange.length = [commentary length] - lastRange.location;
                 
-                [commentary setAttributes:[self attributesForCard:setCard] range:range];
+                /*
+                 After each card, the next range starts after the last matched range.
+                 */
+                nextRange.location = range.location + range.length;
+                nextRange.length = [originalString length] - nextRange.location;
+                
+                [attributedString setAttributes:[self attributesForCard:setCard] range:range];
             }
         }
     }
     
-    self.commentaryLabel.attributedText = commentary;
+    return attributedString;
 }
 
 - (CGFloat)shadingForCard:(Card *)card {
