@@ -70,36 +70,37 @@
 }
 
 -(NSAttributedString *)createAttributedStringsFor:(NSArray *)cards withString:(NSString *)originalString {
-    
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:originalString attributes:@{}];
     
-    NSRange nextRange;
-    nextRange.location = 0;
-    nextRange.length = 0;
-    for (Card *card in cards) {
-        if ([card isKindOfClass:[SetCard class]]) {
-            SetCard* setCard = (SetCard*)card;
-            
-            NSRange range;
-            if (nextRange.length == 0) {
+    if (originalString && [originalString length] > 0) {
+        NSRange nextRange;
+        nextRange.location = 0;
+        nextRange.length = 0;
+        for (Card *card in cards) {
+            if ([card isKindOfClass:[SetCard class]]) {
+                SetCard* setCard = (SetCard*)card;
+                
+                NSRange range;
+                if (nextRange.length == 0) {
+                    /*
+                     For the first card we find the first match.
+                     */
+                    range = [[attributedString string] rangeOfString:setCard.contents];
+                } else {
+                    /*
+                     For the rest, we start searching only from the last range. This is to make sure we set correct attributes for duplicate symbols.
+                     */
+                    range = [[attributedString string] rangeOfString:setCard.contents options:NSLiteralSearch range:nextRange];
+                }
+                
                 /*
-                 For the first card we find the first match.
+                 After each card, the next range starts after the last matched range.
                  */
-                range = [[attributedString string] rangeOfString:setCard.contents];
-            } else {
-                /*
-                 For the rest, we start searching only from the last range. This is to make sure we set correct attributes for duplicate symbols.
-                 */
-                range = [[attributedString string] rangeOfString:setCard.contents options:NSLiteralSearch range:nextRange];
+                nextRange.location = range.location + range.length;
+                nextRange.length = [originalString length] - nextRange.location;
+                
+                [attributedString setAttributes:[self attributesForCard:setCard] range:range];
             }
-            
-            /*
-             After each card, the next range starts after the last matched range.
-             */
-            nextRange.location = range.location + range.length;
-            nextRange.length = [originalString length] - nextRange.location;
-            
-            [attributedString setAttributes:[self attributesForCard:setCard] range:range];
         }
     }
     

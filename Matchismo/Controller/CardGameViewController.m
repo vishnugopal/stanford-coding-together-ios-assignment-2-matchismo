@@ -47,8 +47,12 @@
     if (matchedCardsAsString) {
         if (lastScore > 0) {
             commentary = [NSString stringWithFormat:@"Matched %@ for %d points", matchedCardsAsString, lastScore];
-        } else if (lastScore < 0) {
-            commentary = [NSString stringWithFormat:@"%@ don't match! %d point penalty!", matchedCardsAsString, -lastScore];
+        } else if (lastScore <= 0) {
+            if (lastScore < 0) {
+                commentary = [NSString stringWithFormat:@"%@ don't match! %d point penalty!", matchedCardsAsString, -lastScore];
+            } else if (lastScore == 0) {
+                commentary = [NSString stringWithFormat:@"%@ don't match!", matchedCardsAsString];
+            }
         }
     } else {
         if (lastFlippedCard) {
