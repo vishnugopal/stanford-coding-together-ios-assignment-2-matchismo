@@ -34,6 +34,7 @@
 		F5C3C28B16D4F03700A77D30 /* CardGameScore.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C3C28A16D4F03700A77D30 /* CardGameScore.m */; };
 		F5C3C28E16D4FB5400A77D30 /* ScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C3C28D16D4FB5400A77D30 /* ScoresViewController.m */; };
 		F5C3C29016D5048F00A77D30 /* scoresIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C3C28F16D5048F00A77D30 /* scoresIcon.png */; };
+		F5C3C29316D50F5B00A77D30 /* CardGameSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C3C29216D50F5A00A77D30 /* CardGameSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,8 @@
 		F5C3C28C16D4FB5400A77D30 /* ScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresViewController.h; sourceTree = "<group>"; };
 		F5C3C28D16D4FB5400A77D30 /* ScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresViewController.m; sourceTree = "<group>"; };
 		F5C3C28F16D5048F00A77D30 /* scoresIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoresIcon.png; sourceTree = "<group>"; };
+		F5C3C29116D50F5A00A77D30 /* CardGameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardGameSettings.h; path = Model/CardGameSettings.h; sourceTree = "<group>"; };
+		F5C3C29216D50F5A00A77D30 /* CardGameSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardGameSettings.m; path = Model/CardGameSettings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				F59C297016D01CE800953ABC /* CardMatchingGame.m */,
 				F5C3C28916D4F03700A77D30 /* CardGameScore.h */,
 				F5C3C28A16D4F03700A77D30 /* CardGameScore.m */,
+				F5C3C29116D50F5A00A77D30 /* CardGameSettings.h */,
+				F5C3C29216D50F5A00A77D30 /* CardGameSettings.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				F5C3C28716D4E2D800A77D30 /* TwoCardGameViewController.m in Sources */,
 				F5C3C28B16D4F03700A77D30 /* CardGameScore.m in Sources */,
 				F5C3C28E16D4FB5400A77D30 /* ScoresViewController.m in Sources */,
+				F5C3C29316D50F5B00A77D30 /* CardGameSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

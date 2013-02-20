@@ -11,6 +11,11 @@
 #import "CardGameViewControllerPrivateProperties.h"
 #import "SetCardDeck.h"
 #import "SetCard.h"
+#import "CardGameSettings.h"
+
+#define SetGameViewControllerFlipCostKey @"SetGameViewController.flipCost"
+#define SetGameViewControllerMatchBonusKey @"SetGameViewController.matchBonus"
+#define SetGameViewControllerMisMatchPenaltyKey @"SetGameViewController.mismatchPenalty"
 
 @interface SetGameViewController ()
 @end
@@ -19,15 +24,26 @@
 @synthesize deck = _deck;
 
 - (NSUInteger)flipCost {
-    return 0;
+    int flipCostFromStore = [CardGameSettings integerValueForKey:SetGameViewControllerFlipCostKey];
+    
+    return flipCostFromStore;
 }
 
 - (NSUInteger)matchBonus {
-    return 4;
+    int matchBonusFromStore = [CardGameSettings integerValueForKey:SetGameViewControllerMatchBonusKey];
+    
+    if (matchBonusFromStore == 0) {
+        [CardGameSettings setValue:@4 forKey:SetGameViewControllerMatchBonusKey];
+        matchBonusFromStore = 4;
+    }
+    
+    return matchBonusFromStore;
 }
 
 - (NSUInteger)mismatchPenalty {
-    return 0;
+    int mismatchPenaltyFromStore = [CardGameSettings integerValueForKey:SetGameViewControllerMisMatchPenaltyKey];
+    
+    return mismatchPenaltyFromStore;
 }
 
 - (NSUInteger)numberOfCardsToMatch {

@@ -9,6 +9,7 @@
 #import "TwoCardGameViewController.h"
 #import "CardGameViewControllerPrivateProperties.h"
 #import "PlayingCardDeck.h"
+#import "CardGameSettings.h"
 
 @interface TwoCardGameViewController()
 @end
@@ -16,16 +17,41 @@
 @implementation TwoCardGameViewController
 @synthesize deck = _deck;
 
+#define TwoCardGameViewControllerFlipCostKey @"TwoCardGameViewController.flipCost"
+#define TwoCardGameViewControllerMatchBonusKey @"TwoCardGameViewController.matchBonus"
+#define TwoCardGameViewControllerMisMatchPenaltyKey @"TwoCardGameViewController.mismatchPenalty"
+
 - (NSUInteger)flipCost {
-    return 1;
+    int flipCostFromStore = [CardGameSettings integerValueForKey:TwoCardGameViewControllerFlipCostKey];
+    
+    if (flipCostFromStore == 0) {
+        [CardGameSettings setValue:@1 forKey:TwoCardGameViewControllerFlipCostKey];
+        flipCostFromStore = 1;
+    }
+    
+    return flipCostFromStore;
 }
 
 - (NSUInteger)matchBonus {
-    return 4;
+    int matchBonusFromStore = [CardGameSettings integerValueForKey:TwoCardGameViewControllerMatchBonusKey];
+    
+    if (matchBonusFromStore == 0) {
+        [CardGameSettings setValue:@4 forKey:TwoCardGameViewControllerMatchBonusKey];
+        matchBonusFromStore = 4;
+    }
+    
+    return matchBonusFromStore;
 }
 
 - (NSUInteger)mismatchPenalty {
-    return 2;
+    int mismatchPenaltyFromStore = [CardGameSettings integerValueForKey:TwoCardGameViewControllerMisMatchPenaltyKey];
+    
+    if (mismatchPenaltyFromStore == 0) {
+        [CardGameSettings setValue:@2 forKey:TwoCardGameViewControllerMisMatchPenaltyKey];
+        mismatchPenaltyFromStore = 2;
+    }
+    
+    return mismatchPenaltyFromStore;
 }
 
 - (NSUInteger)numberOfCardsToMatch {
