@@ -7,6 +7,7 @@
 //
 
 #import "CardMatchingGame.h"
+#import "CardGameScore.h"
 
 /* Private Interface */
 @interface CardGameViewController()
@@ -23,4 +24,6 @@
 @property (nonatomic) NSUInteger numberOfCardsToMatch;
 @property (nonatomic, strong) Deck* deck;
 @property (strong, nonatomic) NSString* currentCommentary;
+@property (strong, nonatomic) NSString* typeOfGame;
+@property (strong, nonatomic) CardGameScore *cardGameScore;
 @end

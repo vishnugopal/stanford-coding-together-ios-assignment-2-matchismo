@@ -22,6 +22,12 @@
     return _game;
 }
 
+- (CardGameScore *)cardGameScore {
+    if (!_cardGameScore) _cardGameScore = [[CardGameScore alloc] initWithCardMatchingGame:self.game typeOfGame:self.typeOfGame];
+    
+    return _cardGameScore;
+}
+
 - (UIImage *)cardBackImage {
     if (!_cardBackImage) _cardBackImage = [UIImage imageNamed:@"cardback.png"];
     
@@ -83,9 +89,11 @@
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
+    [self.cardGameScore recordGameScore:self.game.score];
 }
 
 - (IBAction)dealGame {
+    self.cardGameScore = nil;
     self.game = nil;
     self.flipCount = 0;
     [self updateUI];

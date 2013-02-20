@@ -34,6 +34,10 @@
     return 3;
 }
 
+- (NSString *)typeOfGame {
+    return @"Set Matching Game";
+}
+
 - (Deck *)deck {
     if (!_deck) _deck = [[SetCardDeck alloc] init];
     

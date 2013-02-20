@@ -34,5 +34,7 @@
 @property (nonatomic, readonly) int lastScore;
 @property (nonatomic, readonly) Card* lastFlippedCard;
 @property (nonatomic, readonly) NSArray* lastMatchedCards;
+@property (nonatomic, strong, readonly) NSDate* gameStart;
+@property (nonatomic, readonly) NSTimeInterval gameDuration;
 
 @end

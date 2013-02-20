@@ -32,6 +32,10 @@
     return 2;
 }
 
+- (NSString *)typeOfGame {
+    return @"Two Card Matching Game";
+}
+
 - (Deck *)deck {
     if (!_deck) _deck = [[PlayingCardDeck alloc] init];
     

@@ -35,6 +35,7 @@
     }
     
     _numberOfCardsToMatch = 2;
+    _gameStart = [NSDate date];
     
     return self;
 }
@@ -57,7 +58,9 @@
     return self;
 }
 
-
+- (NSTimeInterval)gameDuration {
+    return [[NSDate date] timeIntervalSinceDate:self.gameStart];
+}
 
 - (NSMutableArray *)cards {
     if(!_cards) _cards = [[NSMutableArray alloc] init];
