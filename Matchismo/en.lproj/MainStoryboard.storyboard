@@ -332,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1093" y="-534"/>
+            <point key="canvasLocation" x="-1874" y="-682"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sFl-Y1-Qr5">
@@ -351,7 +351,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLc-wA-KOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1700" y="-250"/>
+            <point key="canvasLocation" x="-2481" y="-398"/>
         </scene>
         <!--Set Game View Controller - Set!-->
         <scene sceneID="Jlx-dV-Ypc">
@@ -889,7 +889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ssy-Tr-J8Q" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1093" y="66"/>
+            <point key="canvasLocation" x="-1874" y="-82"/>
         </scene>
     </scenes>
     <resources>

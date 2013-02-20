@@ -71,7 +71,7 @@
 
 -(NSAttributedString *)createAttributedStringsFor:(NSArray *)cards withString:(NSString *)originalString {
     
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.currentCommentary attributes:@{}];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:originalString attributes:@{}];
     
     NSRange nextRange;
     nextRange.location = 0;
