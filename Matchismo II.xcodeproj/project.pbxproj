@@ -131,18 +131,13 @@
 		F52FB0CA16CFD12900080D45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F5C3C27B16D4E17A00A77D30 /* setCardsIcon.png */,
-				F5C3C27916D4E04A00A77D30 /* twoCardsIcon.png */,
-				F59C297416D046EC00953ABC /* cardback.png */,
 				F52FB0D216CFD12900080D45 /* CardGameAppDelegate.h */,
 				F52FB0D316CFD12900080D45 /* CardGameAppDelegate.m */,
 				F52FB0CB16CFD12900080D45 /* Matchismo-Info.plist */,
 				F52FB0CC16CFD12900080D45 /* InfoPlist.strings */,
 				F52FB0CF16CFD12900080D45 /* main.m */,
 				F52FB0D116CFD12900080D45 /* Matchismo-Prefix.pch */,
-				F52FB0D516CFD12900080D45 /* Default.png */,
-				F52FB0D716CFD12900080D45 /* Default@2x.png */,
-				F52FB0D916CFD12900080D45 /* Default-568h@2x.png */,
+				F5C3C28816D4E4CF00A77D30 /* Images */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,20 +145,20 @@
 		F52FB0E916CFD6AD00080D45 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F59C296F16D01CE800953ABC /* CardMatchingGame.h */,
-				F59C297016D01CE800953ABC /* CardMatchingGame.m */,
 				F52FB0E616CFD6A600080D45 /* Card.h */,
 				F52FB0E716CFD6A600080D45 /* Card.m */,
+				F52FB0EA16CFD6C700080D45 /* Deck.h */,
+				F52FB0EB16CFD6C700080D45 /* Deck.m */,
 				F52FB0ED16CFD92E00080D45 /* PlayingCard.h */,
 				F52FB0EE16CFD92E00080D45 /* PlayingCard.m */,
 				F52FB0F016CFDC0E00080D45 /* PlayingCardDeck.h */,
 				F52FB0F116CFDC0E00080D45 /* PlayingCardDeck.m */,
-				F52FB0EA16CFD6C700080D45 /* Deck.h */,
-				F52FB0EB16CFD6C700080D45 /* Deck.m */,
 				F5265E8516D26A5400196504 /* SetCard.h */,
 				F5265E8616D26A5400196504 /* SetCard.m */,
 				F5265E8816D277EF00196504 /* SetCardDeck.h */,
 				F5265E8916D277EF00196504 /* SetCardDeck.m */,
+				F59C296F16D01CE800953ABC /* CardMatchingGame.h */,
+				F59C297016D01CE800953ABC /* CardMatchingGame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -172,14 +167,27 @@
 			isa = PBXGroup;
 			children = (
 				F5C3C27E16D4E2D800A77D30 /* CardGameViewController.h */,
-				F5C3C27F16D4E2D800A77D30 /* CardGameViewController.m */,
 				F5C3C28016D4E2D800A77D30 /* CardGameViewControllerPrivateProperties.h */,
-				F5C3C28116D4E2D800A77D30 /* SetGameViewController.h */,
-				F5C3C28216D4E2D800A77D30 /* SetGameViewController.m */,
+				F5C3C27F16D4E2D800A77D30 /* CardGameViewController.m */,
 				F5C3C28316D4E2D800A77D30 /* TwoCardGameViewController.h */,
 				F5C3C28416D4E2D800A77D30 /* TwoCardGameViewController.m */,
+				F5C3C28116D4E2D800A77D30 /* SetGameViewController.h */,
+				F5C3C28216D4E2D800A77D30 /* SetGameViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		F5C3C28816D4E4CF00A77D30 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F5C3C27B16D4E17A00A77D30 /* setCardsIcon.png */,
+				F5C3C27916D4E04A00A77D30 /* twoCardsIcon.png */,
+				F59C297416D046EC00953ABC /* cardback.png */,
+				F52FB0D516CFD12900080D45 /* Default.png */,
+				F52FB0D716CFD12900080D45 /* Default@2x.png */,
+				F52FB0D916CFD12900080D45 /* Default-568h@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

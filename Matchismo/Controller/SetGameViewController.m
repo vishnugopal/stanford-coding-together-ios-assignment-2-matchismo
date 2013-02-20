@@ -13,7 +13,6 @@
 #import "SetCard.h"
 
 @interface SetGameViewController ()
-
 @end
 
 @implementation SetGameViewController
@@ -74,35 +73,33 @@
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.currentCommentary attributes:@{}];
     
-    if (cards) {
-        NSRange nextRange;
-        nextRange.location = 0;
-        nextRange.length = 0;
-        for (Card *card in cards) {
-            if ([card isKindOfClass:[SetCard class]]) {
-                SetCard* setCard = (SetCard*)card;
-                
-                NSRange range;
-                if (nextRange.length == 0) {
-                    /*
-                     For the first card we find the first match.
-                     */
-                    range = [[attributedString string] rangeOfString:setCard.contents];
-                } else {
-                    /*
-                     For the rest, we start searching only from the last range. This is to make sure we have correct attributes for duplicate symbols.
-                     */
-                    range = [[attributedString string] rangeOfString:setCard.contents options:NSLiteralSearch range:nextRange];
-                }
-                
+    NSRange nextRange;
+    nextRange.location = 0;
+    nextRange.length = 0;
+    for (Card *card in cards) {
+        if ([card isKindOfClass:[SetCard class]]) {
+            SetCard* setCard = (SetCard*)card;
+            
+            NSRange range;
+            if (nextRange.length == 0) {
                 /*
-                 After each card, the next range starts after the last matched range.
+                 For the first card we find the first match.
                  */
-                nextRange.location = range.location + range.length;
-                nextRange.length = [originalString length] - nextRange.location;
-                
-                [attributedString setAttributes:[self attributesForCard:setCard] range:range];
+                range = [[attributedString string] rangeOfString:setCard.contents];
+            } else {
+                /*
+                 For the rest, we start searching only from the last range. This is to make sure we set correct attributes for duplicate symbols.
+                 */
+                range = [[attributedString string] rangeOfString:setCard.contents options:NSLiteralSearch range:nextRange];
             }
+            
+            /*
+             After each card, the next range starts after the last matched range.
+             */
+            nextRange.location = range.location + range.length;
+            nextRange.length = [originalString length] - nextRange.location;
+            
+            [attributedString setAttributes:[self attributesForCard:setCard] range:range];
         }
     }
     

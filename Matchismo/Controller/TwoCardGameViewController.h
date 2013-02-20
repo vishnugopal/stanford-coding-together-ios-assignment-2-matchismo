@@ -10,7 +10,4 @@
 
 
 @interface TwoCardGameViewController : CardGameViewController
-
-
-
 @end
