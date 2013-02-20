@@ -19,6 +19,7 @@
 
 - (void)recordGameScore:(int)scoreFromGame;
 + (NSArray *)allScores;
++ (NSArray *)allScoresOrderedByGameStartTime;
 
 @property (nonatomic, readonly) int score;
 @property (nonatomic, readonly, strong) NSString* typeOfGame;

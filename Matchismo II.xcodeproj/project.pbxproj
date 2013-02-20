@@ -33,6 +33,7 @@
 		F5C3C28716D4E2D800A77D30 /* TwoCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C3C28416D4E2D800A77D30 /* TwoCardGameViewController.m */; };
 		F5C3C28B16D4F03700A77D30 /* CardGameScore.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C3C28A16D4F03700A77D30 /* CardGameScore.m */; };
 		F5C3C28E16D4FB5400A77D30 /* ScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C3C28D16D4FB5400A77D30 /* ScoresViewController.m */; };
+		F5C3C29016D5048F00A77D30 /* scoresIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C3C28F16D5048F00A77D30 /* scoresIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		F5C3C28A16D4F03700A77D30 /* CardGameScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardGameScore.m; path = Model/CardGameScore.m; sourceTree = "<group>"; };
 		F5C3C28C16D4FB5400A77D30 /* ScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresViewController.h; sourceTree = "<group>"; };
 		F5C3C28D16D4FB5400A77D30 /* ScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresViewController.m; sourceTree = "<group>"; };
+		F5C3C28F16D5048F00A77D30 /* scoresIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoresIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		F5C3C28816D4E4CF00A77D30 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F5C3C28F16D5048F00A77D30 /* scoresIcon.png */,
 				F5C3C27B16D4E17A00A77D30 /* setCardsIcon.png */,
 				F5C3C27916D4E04A00A77D30 /* twoCardsIcon.png */,
 				F59C297416D046EC00953ABC /* cardback.png */,
@@ -261,6 +264,7 @@
 				F59C297716D048FA00953ABC /* README.md in Resources */,
 				F5C3C27A16D4E04A00A77D30 /* twoCardsIcon.png in Resources */,
 				F5C3C27C16D4E17A00A77D30 /* setCardsIcon.png in Resources */,
+				F5C3C29016D5048F00A77D30 /* scoresIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

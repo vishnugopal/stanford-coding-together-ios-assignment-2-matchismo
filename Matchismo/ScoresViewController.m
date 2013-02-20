@@ -18,7 +18,7 @@
 - (NSString*)scoresAsText {
     NSString *scoresAsText = @"";
     
-    for (CardGameScore *gameScore in [CardGameScore allScores]) {
+    for (CardGameScore *gameScore in [CardGameScore allScoresOrderedByGameStartTime]) {
         scoresAsText = [scoresAsText stringByAppendingFormat:@"%@ at %@: %d points\n", gameScore.typeOfGame, gameScore.gameStartTime, gameScore.score];
     }
     
