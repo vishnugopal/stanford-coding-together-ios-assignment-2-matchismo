@@ -13,10 +13,6 @@
 #import "SetCard.h"
 #import "CardGameSettings.h"
 
-#define SetGameViewControllerFlipCostKey @"SetGameViewController.flipCost"
-#define SetGameViewControllerMatchBonusKey @"SetGameViewController.matchBonus"
-#define SetGameViewControllerMisMatchPenaltyKey @"SetGameViewController.mismatchPenalty"
-
 @interface SetGameViewController ()
 @end
 

@@ -17,10 +17,6 @@
 @implementation TwoCardGameViewController
 @synthesize deck = _deck;
 
-#define TwoCardGameViewControllerFlipCostKey @"TwoCardGameViewController.flipCost"
-#define TwoCardGameViewControllerMatchBonusKey @"TwoCardGameViewController.matchBonus"
-#define TwoCardGameViewControllerMisMatchPenaltyKey @"TwoCardGameViewController.mismatchPenalty"
-
 - (NSUInteger)flipCost {
     int flipCostFromStore = [CardGameSettings integerValueForKey:TwoCardGameViewControllerFlipCostKey];
     
